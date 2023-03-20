@@ -58,6 +58,7 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!');
 });
 
+
 app.post('/upload',upload,(req,res)=>{
     // console.log(req.file)
     // res.send({
@@ -72,7 +73,7 @@ app.post('/upload',upload,(req,res)=>{
         Key:`${fileType}`,
         Body:req.file.buffer
     }
-    
+
     
     s3.upload(params,(err,data)=>{
         if(err)
